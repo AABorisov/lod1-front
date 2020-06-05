@@ -7,14 +7,14 @@ const port = process.env.PORT || 8088;
 const app = express();
 
 // Certificate
-// const privateKey = fs.readFileSync('/etc/letsencrypt/live//privkey.pem', 'utf8');
-// const certificate = fs.readFileSync('/etc/letsencrypt/live//cert.pem', 'utf8');
-// const ca = fs.readFileSync('/etc/letsencrypt/live//chain.pem', 'utf8');
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/networking.webware-kassel.de/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/networking.webware-kassel.de/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/networking.webware-kassel.de/chain.pem', 'utf8');
 
 const credentials = {
-  // key: privateKey,
-  // cert: certificate,
-  // ca: ca
+  key: privateKey,
+  cert: certificate,
+  ca: ca
 };
 
 // the __dirname is the current directory from where the script is running
