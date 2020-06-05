@@ -82,7 +82,7 @@ module.exports = (env, options) => {
         filename: './index.html',
       }),
       new webpack.DefinePlugin({
-        'process.env.API_URL': JSON.stringify('https://:5000/'),
+        'process.env.API_URL': JSON.stringify('https://116.203.223.126:80/'),
       }),
     ],
     output: {
