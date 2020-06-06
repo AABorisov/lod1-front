@@ -2,8 +2,9 @@ import * as React from 'react';
 
 import styles = require('./styles.scss');
 import classnames from 'classnames';
+import {ITab} from "./Tabs";
 
-interface TabProps {
+interface TabProps extends ITab {
   name: string;
   active: boolean;
 }

@@ -216,10 +216,15 @@
   overflow:hidden
 }
 .side-panel_tab-body {
+  display: none;
   height:100%;
   width:100%;
   overflow-x:hidden;
   -webkit-overflow-scrolling:touch
+}
+
+.side-panel_tab-body__active {
+  display: block;
 }
 .side-panel_tab-row {
   height:48px;

@@ -32,7 +32,7 @@ module.exports = (env, options) => {
           test: /\.s[ac]ss$/i,
           use: [
             devMode || true ? 'style-loader' : MiniCssExtractPlugin.loader,
-            'style-loader',
+            // 'style-loader',
             {
               loader: 'css-loader',
               options: {
@@ -43,7 +43,7 @@ module.exports = (env, options) => {
                   context: path.resolve(__dirname, 'src'),
                   hashPrefix: 'my-custom-hash',
                 } : true,
-                importLoaders: 1,
+                // importLoaders: 1,
               },
             },
             'sass-loader',
@@ -83,11 +83,11 @@ module.exports = (env, options) => {
         from: 'public/_networking',
         to: 'public/_networking'
       }]),
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[id].css',
-        ignoreOrder: false,
-      }),
+      // new MiniCssExtractPlugin({
+      //   filename: '[name].css',
+      //   chunkFilename: '[id].css',
+      //   ignoreOrder: false,
+      // }),
       new HtmlWebPackPlugin({
         template: './public/index.html',
         filename: './index.html',
