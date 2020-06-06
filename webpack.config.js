@@ -8,7 +8,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = (env, options) => {
-  const devMode = options.mode !== 'production';
+  const devMode = options.mode !== 'production' || true;
+  console.log(devMode)
 
   return {
     entry: './src/index.tsx',
@@ -30,12 +31,19 @@ module.exports = (env, options) => {
         {
           test: /\.s[ac]ss$/i,
           use: [
-            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            // devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'style-loader',
             {
               loader: 'css-loader',
               options: {
-                modules: true,
-                importLoaders: 1,
+                modules: {
+                  mode: 'local',
+                  exportGlobals: true,
+                  localIdentName: '[local]',
+                  context: path.resolve(__dirname, 'src'),
+                  hashPrefix: 'my-custom-hash',
+                },
+                // importLoaders: 0,
               },
             },
             'sass-loader',
@@ -72,11 +80,11 @@ module.exports = (env, options) => {
         from: 'public/data',
         to: 'public/data'
       }]),
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[id].css',
-        ignoreOrder: false,
-      }),
+      // new MiniCssExtractPlugin({
+      //   filename: '[name].css',
+      //   chunkFilename: '[id].css',
+      //   ignoreOrder: false,
+      // }),
       new HtmlWebPackPlugin({
         template: './public/index.html',
         filename: './index.html',

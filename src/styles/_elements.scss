@@ -27,3 +27,64 @@
     align-items: center;
   }
 }
+
+:root {
+  --white:#fff;
+  --black:#000;
+  --gray-100:#f7f8fa;
+  --gray-200:#f1f2f5;
+  --gray-300:#e4e6eb;
+  --gray-400:#bdbfc7;
+  --gray-500:#979ba8;
+  --gray-600:#757a8a;
+  --gray-650:#696e7c;
+  --gray-700:#4f5461;
+  --gray-800:#2c3242;
+  --gray-900:#1b1f29;
+  --blue-100:#ecf2ff;
+  --blue-200:#d6e3ff;
+  --blue-300:#bdd2ff;
+  --blue-400:#175fff;
+  --blue-500:#1043b2;
+  --orange-100:#ffeed1;
+  --orange-600:#ff7a1a;
+  --red-100:#fff2f2;
+  --red-200:#ffd3d3;
+  --red-300:#ffbaba;
+  --red-400:#fe4d4d;
+  --red-500:#e64646;
+  --green-100:#e2f8ed;
+  --green-200:#c5f2dc;
+  --green-400:#3dd48a;
+  --green-500:#36ba79;
+  --green-600:#1f6e48;
+  --warning:#f2c94c;
+  --warning-hover:#ceaa41;
+  --primary-100:var(--blue-100);
+  --primary-200:var(--blue-200);
+  --primary-300:var(--blue-300);
+  --primary-400:var(--blue-400);
+  --primary-500:var(--blue-500);
+  --icon-color:var(--gray-600);
+  --transition-duration-short:0.2s;
+  --transition-duration-long:0.5s;
+  --transition:all var(--transition-duration-short) ease;
+  --max-width:1120px;
+  --page-padding:24px;
+  --page-padding-mobile:16px;
+  --header-height:64px;
+  --tab-panel-width-expanded:400px;
+  --tab-panel-width-collapsed:64px;
+  --nav-panel-width:80px;
+  --button-size-small:32px;
+  --button-size-large:48px;
+  --mobile-panel-toggle:200;
+  --modal-layer:200;
+  --dropdown-menu:100;
+  --tooltip:100;
+  --video-controls:100;
+  --z-index-header:2;
+  --z-index-stream-overlay:2;
+  --z-index-sidebar:3;
+  --font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
