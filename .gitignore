@@ -5,3 +5,4 @@ package-lock.json
 ui
 *.css
 *.css.map
+!public/_networking
