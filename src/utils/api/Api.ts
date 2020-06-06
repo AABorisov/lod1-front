@@ -7,6 +7,11 @@ import {
   EndPoint,
 } from './constant';
 
+const
+  httpForbidden = 403,
+  httpUnauthorized = 401,
+  httpBadRequest = 400;
+
 interface OptionsHeaders {
   Accept: string;
   'Content-Type': string;
@@ -68,6 +73,29 @@ class ApiClientClass {
     this.client.interceptors.response.use(
       r => r,
       async error => {
+        // if (error.response && error.response.status === 403 /*httpForbidden*/ && !error.config.retry) {
+        //   this.removeTokens();
+        //   throw 'USER_UNAUTHORIZED';
+        // }
+        // if (error.response && error.response.status === 401 /*httpUnauthorized*/ && !error.config.retry) {
+        //   try {
+        //     const {data} = await this.createRefreshRequest();
+        //     this.setTokens({
+        //       tAccess: data.access,
+        //       tRefresh: data.token
+        //     });
+        //     const newRequest = {
+        //       ...error.config,
+        //       retry: true
+        //     };
+        //     return this.client(newRequest);
+        //   } catch (err) {
+        //     console.warn('');
+        //     throw err
+        //   } finally {
+        //     this.refreshRequest = null;
+        //   }
+        // }
         throw error;
       }
     );
@@ -76,6 +104,57 @@ class ApiClientClass {
   urlFormat(url: string, args: object = {}): string {
     return this ? url : args.toString();
   }
+  //
+  // setTokens({ tAccess = '', tRefresh = '' }) {
+  //     localStorage.setItem('tAccess', tAccess);
+  //     localStorage.setItem('tRefresh', tRefresh);
+  //     window.dispatchEvent(new StorageEvent('storage', { key: 'tAccess' }));
+  //     window.dispatchEvent(new StorageEvent('storage', { key: 'tRefresh' }));
+  // }
+  //
+  // removeTokens() {
+  //     localStorage.removeItem('tAccess');
+  //     localStorage.removeItem('tRefresh');
+  //     window.dispatchEvent(new StorageEvent('storage', { key: 'tAccess' }));
+  //     window.dispatchEvent(new StorageEvent('storage', { key: 'tRefresh' }));
+  // }
+  //
+  // async loginByToken({ urlArguments }: { urlArguments: string }) {
+  //   try {
+  //     const result = await this.client({
+  //       method: BACKEND_ENDPOINTS.updateToken.method,
+  //       url: this.urlFormat(BACKEND_ENDPOINTS.updateToken.url, { urlArguments }),
+  //     });
+  //     const { data } = result;
+  //     this.setTokens({
+  //       tAccess: data.jwt_token.access,
+  //       tRefresh: data.jwt_token.refresh,
+  //     });
+  //     return true;
+  //   } catch (e) {
+  //     throw new Error(e);
+  //   }
+  // }
+  //
+  // async logout () {
+  //   try {
+  //     const result = await this.client({
+  //       ...{
+  //         method: BACKEND_ENDPOINTS.updateToken.method,
+  //         url: `${BACKEND_ENDPOINTS.updateToken.url}${token}/`
+  //       }
+  //     });
+  //   } catch (error) {
+  //     if (error !== 'USER_UNAUTHORIZED') {
+  //       const respStatus = error.response.status;
+  //       if (![httpForbidden, httpUnauthorized].includes(respStatus)) {
+  //         throw new Error(error.response);
+  //       }
+  //     }
+  //   } finally {
+  //     this.removeTokens();
+  //   }
+  // }
 }
 
 /**
@@ -99,6 +178,9 @@ const Api: ApiClientClass & BackendEndpointsFunctions = new Proxy(new ApiClientC
           })
           .then(serverResponse => serverResponse.data)
           .catch(error => {
+            // if (error.response.status === httpBadRequest) {
+            //   new BadDataError('Bad request error');
+            // }
             throw new Error('Server response error');
           });
       };

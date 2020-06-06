@@ -11,7 +11,7 @@ const App: React.FC<{}> = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Redirect exact from="/" to="/reception" />
+          <Redirect exact from="/" to="/afterparty" />
           <Route path="/reception" component={ReceptionPage} />
           <Route path="/stage" component={StagePage} />
           <Route path="/session" component={SessionPage} />
