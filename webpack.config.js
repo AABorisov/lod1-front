@@ -79,6 +79,9 @@ module.exports = (env, options) => {
       }, {
         from: 'public/data',
         to: 'public/data'
+      }, {
+        from: 'public/_networking',
+        to: 'public/_networking'
       }]),
       new MiniCssExtractPlugin({
         filename: '[name].css',
