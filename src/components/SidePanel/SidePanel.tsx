@@ -12,10 +12,10 @@ const SidePanel: React.FC<{}> = () => {
     active: false
   }, {
     name: 'Chat',
-    active: false
+    active: true
   }, {
     name: 'People',
-    active: true
+    active: false
   }, {
     name: 'Contacts',
     active: false
