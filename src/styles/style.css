@@ -28,7 +28,6 @@ main > img {
 }
 
 .btns {
-	margin-right: 10px;
 }
 
 #title_text {
@@ -39,7 +38,7 @@ main > img {
 	line-height: 40px;
 	box-shadow: 0 .4em .4em rgba(0, 0, 0, 0.5);
 	display: inline-block;
-	width: 200px;
+	width: auto;
 	background-color: #fff;
 	margin-top: -20px;
 	
@@ -49,6 +48,7 @@ main > img {
 
 
 .count-btn {
+  margin-left: 10px;
 	padding: .5em 1.5em;
 	border: 1px solid #3f90bc;
 	border-radius: 5px;
@@ -122,7 +122,7 @@ main > img {
 	margin: 50px;
 }
 
-.very-visited-rooms h3 {
+.very-visited-rooms > h3 {
 	margin-top: 10px;
 	margin-bottom: 50px;
 }
@@ -160,9 +160,6 @@ main > img {
 .control h3 {
   width: 200px;
 }
-
-
-
 
 @media (max-width: 1160px) {
 	.room-block {
@@ -214,7 +211,6 @@ main > img {
 		width: 70vw;
 		height: auto;
 	}
-
 
 	.item {
 		display: inline-block;
