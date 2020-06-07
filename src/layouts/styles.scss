@@ -85,6 +85,52 @@
       width:100%
     }
   }
+
+  .header_buttons {
+    margin-left: auto;
+  }
+  .header_buttons_button {
+    height: 40px;
+    margin-left: 15px;
+    padding: 0 10px;
+  }
+
+  .header_buttons_networking {
+    background: #FFFFFF;
+    border: 3px solid #949494;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    /* Actionable Item */
+
+    color: #5A5A5A;
+  }
+
+  .header_buttons_videoroom {
+    background: #70B9CB;
+    border: 3px solid #92D6DD;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 15px;
+    line-height: 18px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+  }
+
   .header_header-title {
     font-style:normal;
     font-weight:500;
@@ -111,7 +157,6 @@
     margin-right:auto
   }
   .header_spinner {
-    border-top:2px solid var(--gray-300);
     border:2px solid var(--gray-300);
     border-top-color:var(--gray-600);
     height:18px;

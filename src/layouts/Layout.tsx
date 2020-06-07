@@ -35,7 +35,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.app}>
       <header className={styles.header_header}>DEV Labs
-        <div className={styles.buttons}></div>
+        <div className={styles.header_buttons}>
+          <button className={classnames(styles.header_buttons_button, styles.header_buttons_networking)}>Networking</button>
+          <button className={classnames(styles.header_buttons_button, styles.header_buttons_videoroom)}>Video Room</button>
+        </div>
       </header>
       <nav className={styles['navigation-sidebar-component_navigation-sidebar-container']}>
         <NavLink to="reception" className={classnames(styles['navigation-sidebar-component_navigation-sidebar-link'],
