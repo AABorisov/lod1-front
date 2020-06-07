@@ -1,11 +1,28 @@
 import * as React from 'react';
+import YouTube, {Options} from 'react-youtube';
+import styles = require('./styles.scss');
 
 require('../styles/style.css');
 
 const AfterpartyPage: React.FC<{}> = () => {
+
+  const opts: Options = {
+    // width: '100%',
+    // height: '1000',
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+
   return (
-    <div>
-    <img src="public/assets/afterparty/image 8.png" alt="" />
+    <div className={styles.afterparty}>
+      <div className={styles.videoblock} id={'videoblock'} >
+        <YouTube videoId="ZR_v2WiV4r4" opts={opts}
+                 className={styles.youtube}
+        containerClassName={styles.youtubeContainer}/>
+        {/*<img src="public/assets/afterparty/image 8.png" alt="" />*/}
+      </div>
 
     <div className="block-items">
       <p id="title_text">Afterparty big scene</p>
