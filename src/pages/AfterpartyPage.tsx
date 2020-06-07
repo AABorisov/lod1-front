@@ -56,24 +56,18 @@ const AfterpartyPage: React.FC<AfterpartyPageDispatchProps> = ({changeVideoplaye
           <img src="public/assets/afterparty/image 11.png" />
           <div className="control">
             <h3>Пляж</h3>
-
             <div className="btns">
-
               <button className="count-btn">
                 <i className="fa fa-users" aria-hidden="true"></i>2\10
               </button>
-
               <button className="count-btn">
                 <i className="fa fa-eye" aria-hidden="true"></i>13
               </button>
-
             </div>
-
-
           </div>
           <h3>Lecture: 5 steps to remove yourself</h3>
         </div>
-        <div className="item">
+        <div className="item" onClick={onVideoroomClick('fkps18H3SXY')}>
           <img src="public/assets/afterparty/image 13.png" />
           <div className="control">
             <h3>Улица</h3>
@@ -91,7 +85,7 @@ const AfterpartyPage: React.FC<AfterpartyPageDispatchProps> = ({changeVideoplaye
           </div>
           <h3>Lecture: How do virus tests actually work?</h3>
         </div>
-        <div className="item">
+        <div className="item" onClick={onVideoroomClick('oSmUI3m2kLk')}>
           <img src="public/assets/afterparty/image 14.png" />
           <div className="control">
             <h3>Лес</h3>
@@ -126,7 +120,7 @@ const AfterpartyPage: React.FC<AfterpartyPageDispatchProps> = ({changeVideoplaye
           </div>
           <h3>Lecture: The link between climate</h3>
         </div>
-        <div className="item">
+        <div className="item" onClick={onVideoroomClick('-IYbkrcvV-I')}>
           <img src="public/assets/afterparty/image 19.png" />
           <div className="control">
             <h3>Спальня</h3>
@@ -143,7 +137,7 @@ const AfterpartyPage: React.FC<AfterpartyPageDispatchProps> = ({changeVideoplaye
           </div>
           <h3>Lecture: When is pandemic over?</h3>
         </div>
-        <div className="item">
+        <div className="item" onClick={onVideoroomClick('x4m6Dy9K3EE')}>
           <img src="public/assets/afterparty/image 33.png" />
           <div className="control">
             <h3>Япония</h3>

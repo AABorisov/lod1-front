@@ -53,6 +53,7 @@ main > img {
 	border: 1px solid #3f90bc;
 	border-radius: 5px;
 	outline: none;
+  cursor: pointer;
 }
 
 
@@ -144,6 +145,7 @@ main > img {
 .item {
 	height: 300px;
   width: auto;
+  cursor: pointer;
 }
 
 .control {
