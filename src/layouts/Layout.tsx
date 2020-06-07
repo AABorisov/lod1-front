@@ -11,30 +11,32 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navLinks = [
+    // {
+    //   to: 'reception',
+    //   active: true,
+    //   name: 'Reception',
+    // },
     {
-      to: 'reception',
+      to: 'afterparty',
       active: true,
-      name: 'Reception',
+      name: 'Afterparty',
     },
-    {
-      to: 'stage',
-      active: false,
-      name: 'Stage',
-    },
-    {
-      to: 'session',
-      active: false,
-      name: 'Session',
-    },
-    {
-      to: 'networking',
-      active: false,
-      name: 'Networking',
-    },
+    // {
+    //   to: 'session',
+    //   active: false,
+    //   name: 'Session',
+    // },
+    // {
+    //   to: 'networking',
+    //   active: false,
+    //   name: 'Networking',
+    // },
   ];
   return (
     <div className={styles.app}>
-      <header className={styles.header_header}>DEV Labs</header>
+      <header className={styles.header_header}>DEV Labs
+        <div className={styles.buttons}></div>
+      </header>
       <nav className={styles['navigation-sidebar-component_navigation-sidebar-container']}>
         <NavLink to="reception" className={classnames(styles['navigation-sidebar-component_navigation-sidebar-link'],
   styles['test-id-navigation-sidebar-hopin-logo'])}/>
