@@ -1,210 +1,238 @@
-
 @import '../../styles/_elements';
 
 .people-detail_container {
-  height:calc(100vh - 112px)
+  height: calc(100vh - 112px);
 }
 .people-detail_spinner {
-  border:2px solid var(--gray-300);
-  border-top-color:var(--primary-400);
-  height:20px;
-  width:20px
+  border: 2px solid var(--gray-300);
+  border-top-color: var(--primary-400);
+  height: 20px;
+  width: 20px;
 }
 .people-detail_button-container {
-  width:100%;
-  max-width:180px
+  width: 100%;
+  max-width: 180px;
 }
-@media(max-width:900px) {
+@media (max-width: 900px) {
   .people-detail_container {
-    height:calc(66vh - 48px)
+    height: calc(66vh - 48px);
   }
 }
 .attendee-list-item_attendee-list-item {
-  width:100%;
-  display:flex;
-  align-items:center;
-  padding:14px 0
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
 }
 .attendee-list-item_avatar-wrap {
-  position:relative;
-  display:flex;
-  align-items:center;
-  margin-right:8px;
-  border-radius:50%;
-  padding:2px;
-  border:2px solid transparent;
-  background-clip:content-box;
-  background-color:#fff
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  background-color: #fff;
 }
 .attendee-list-item_avatar-wrap.attendee-list-item_active:before {
-  content:"";
-  position:absolute;
-  height:8px;
-  width:8px;
-  bottom:4px;
-  right:-2px;
-  border-radius:50%;
-  border:2px solid var(--white);
-  background-color:var(--green-400)
+  content: '';
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  bottom: 4px;
+  right: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--white);
+  background-color: var(--green-400);
 }
 .attendee-list-item_avatar-wrap.attendee-list-item_connected {
-  border:2px solid var(--primary-300)
+  border: 2px solid var(--primary-300);
 }
 .attendee-list-item_avatar-wrap img {
-  height:32px;
-  width:32px;
-  border-radius:50%;
-  -o-object-fit:cover;
-  object-fit:cover
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .attendee-list-item_user-details {
-  display:flex;
-  flex-direction:column
+  display: flex;
+  flex-direction: column;
 }
 .attendee-list-item_username {
-  margin-bottom:2px;
-  display:flex;
-  align-items:center;
-  font-weight:600;
-  font-size:14px;
-  color:var(--gray-800)
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gray-800);
 }
 .attendee-list-item_headline {
-  font-size:14px;
-  color:var(--gray-700);
-  white-space:nowrap;
-  max-width:220px;
-  text-overflow:ellipsis;
-  overflow:hidden
+  font-size: 14px;
+  color: var(--gray-700);
+  white-space: nowrap;
+  max-width: 220px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .attendee-list-item_red-dot {
-  width:4px;
-  height:4px;
-  background:var(--red-400);
-  border-radius:50%;
-  margin:0 4px
+  width: 4px;
+  height: 4px;
+  background: var(--red-400);
+  border-radius: 50%;
+  margin: 0 4px;
 }
 .attendee-list-item_gray-dot {
-  width:4px;
-  height:4px;
-  background:var(--gray-400);
-  border-radius:50%;
-  margin:0 4px
+  width: 4px;
+  height: 4px;
+  background: var(--gray-400);
+  border-radius: 50%;
+  margin: 0 4px;
 }
 .label-strip_label-strip-container {
-  margin-top:12px;
-  margin-bottom:12px;
-  padding:0 18px;
-  display:flex
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 0 18px;
+  display: flex;
 }
 .label-strip_label {
-  border-radius:4px;
-  background:var(--primary-400);
-  color:#fff;
-  font-size:.8rem;
-  padding:4px 8px;
-  margin-right:5px
+  border-radius: 4px;
+  background: var(--primary-400);
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  margin-right: 5px;
 }
 .label-strip_close-icon {
-  padding-left:8px;
-  cursor:pointer
+  padding-left: 8px;
+  cursor: pointer;
 }
 .label-strip_close-icon svg {
-  width:6px
+  width: 6px;
 }
 .search-input_search-container {
-  position:relative
+  position: relative;
 }
 .search-input_search-input {
-  height:32px;
-  width:100%;
-  padding:0 32px 0 16px;
-  outline:none;
-  border:1px solid var(--gray-300);
-  border-radius:4px;
-  font-size:12px;
-  background:var(--gray-200);
-  color:var(--grey-800)
+  height: 32px;
+  width: 100%;
+  padding: 0 32px 0 16px;
+  outline: none;
+  border: 1px solid var(--gray-300);
+  border-radius: 4px;
+  font-size: 12px;
+  background: var(--gray-200);
+  color: var(--grey-800);
 }
 .search-input_search-input:focus {
-  border-color:var(--primary-400);
-  box-shadow:0 0 0 1px var(--primary-400)
+  border-color: var(--primary-400);
+  box-shadow: 0 0 0 1px var(--primary-400);
 }
 .search-input_search-icon {
-  position:absolute;
-  right:10px;
-  top:50%;
-  transform:translateY(-50%)
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .search-input_spinner {
-  border-top:2px solid var(--gray-300);
-  border:2px solid var(--gray-300);
-  border-top-color:var(--primary-400);
-  height:16px;
-  position:absolute;
-  right:10px;
-  top:8px;
-  width:16px
+  border-top: 2px solid var(--gray-300);
+  border: 2px solid var(--gray-300);
+  border-top-color: var(--primary-400);
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 16px;
 }
 .people-list_search-input-bar {
-  background-color:var(--white);
-  box-shadow:0 1px 2px rgba(44,50,66,.08);
-  padding:var(--page-padding-mobile);
-  display:flex
+  background-color: var(--white);
+  box-shadow: 0 1px 2px rgba(44, 50, 66, 0.08);
+  padding: var(--page-padding-mobile);
+  display: flex;
 }
 .people-list_search-input {
-  flex-grow:1
+  flex-grow: 1;
 }
 .people-list_filter-button-container {
-  position:relative;
-  margin-left:10px
+  position: relative;
+  margin-left: 10px;
 }
 .people-list_filter-button {
-  border:none;
-  outline:none;
-  padding:0;
-  background-color:transparent;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:20px;
-  height:100%
+  border: none;
+  outline: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 100%;
 }
 .people-list_filter-menu-container {
-  position:absolute;
-  bottom:0;
-  right:50%
+  position: absolute;
+  bottom: 0;
+  right: 50%;
 }
 .people-list_attendee-list {
-  padding:0 var(--page-padding-mobile);
-  overflow-y:auto
+  padding: 0 var(--page-padding-mobile);
+  overflow-y: auto;
 }
 .people-list_attendee-list-item {
-  border-bottom:1px solid var(--gray-300);
-  cursor:pointer
+  border-bottom: 1px solid var(--gray-300);
+  cursor: pointer;
+  padding: 10px 15px;
+  // background-color: var(--blue-100);
+  margin: 5px 0;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.people-list-item_avatar {
+  min-width: 30px;
+  min-height: 30px;
+  width: 30px;
+  height: 30px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.people-list-item_info {
+  margin-left: 10px;
+}
+.people-list-item_info_name {
+  font-weight: 600;
+}
+.people-list-item_info_content {
 }
 .people-list_load-more {
-  align-items:center;
-  color:var(--primary-400);
-  cursor:pointer;
-  display:flex;
-  font-size:12px;
-  font-weight:500;
-  height:52px;
-  justify-content:center;
-  text-align:center;
-  text-decoration:none
+  align-items: center;
+  color: var(--primary-400);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  height: 52px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
 }
 .people-list_spinner {
-  border-top:2px solid var(--gray-300);
-  border:2px solid var(--gray-300);
-  border-top-color:var(--primary-400);
-  height:20px;
-  width:20px
+  border-top: 2px solid var(--gray-300);
+  border: 2px solid var(--gray-300);
+  border-top-color: var(--primary-400);
+  height: 20px;
+  width: 20px;
 }
 .people-list_spinner-container {
-  display:flex;
-  justify-content:center;
-  padding:16px
+  display: flex;
+  justify-content: center;
+  padding: 16px;
 }

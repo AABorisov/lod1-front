@@ -7,10 +7,9 @@ import {
   EndPoint,
 } from './constant';
 
-const
-  httpForbidden = 403,
-  httpUnauthorized = 401,
-  httpBadRequest = 400;
+const httpForbidden = 403;
+const httpUnauthorized = 401;
+const httpBadRequest = 400;
 
 interface OptionsHeaders {
   Accept: string;

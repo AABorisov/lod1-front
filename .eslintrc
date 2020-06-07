@@ -33,7 +33,10 @@
     "react/prefer-stateless-function": "warn",
     "react/jsx-props-no-spreading": "warn",
     "react/destructuring-assignment": "warn",
-    "no-param-reassign": "warn"
+    "no-param-reassign": "warn",
+    "react/button-has-type": "off",
+    "react/self-closing-comp": "off",
+    "jsx-a11y/alt-text": "off"
   },
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],

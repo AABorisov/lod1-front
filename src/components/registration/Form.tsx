@@ -1,15 +1,21 @@
 import * as React from 'react';
-
-import styles = require('./styles.scss');
 import classnames from 'classnames';
 import {StepProps} from "./Registration";
 
-const Form: React.FC<StepProps> = ({user, fields, onChange}) => {
-  const onFieldChange = (field: string): (event: React.InputHTMLAttributes<HTMLInputElement>) => void => (event: React.InputHTMLAttributes<HTMLInputElement>): void => {
-    const value = event.value;
+import styles = require('./styles.scss');
+
+const Form: React.FC<StepProps> = ({ user, fields, onChange }) => {
+  const onFieldChange = (
+    field: string
+  ): ((event: React.InputHTMLAttributes<HTMLInputElement>) => void) => (
+    event: React.InputHTMLAttributes<HTMLInputElement>
+  ): void => {
+    const {value} = event;
     onChange({ field: value });
-  }
-  return <div className={styles['form']}>
+  };
+  return (
+    (
+<div className={styles['form']}>
     {
       fields.map(field => (
         <div key={field.name}>
@@ -19,7 +25,8 @@ const Form: React.FC<StepProps> = ({user, fields, onChange}) => {
         </div>
       ))
     }
-  </div>;
-}
+  </div>
+);
+};
 
 export default Form;

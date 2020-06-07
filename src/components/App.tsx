@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 import Layout from '../layouts/Layout';
 import ReceptionPage from '../pages/ReceptionPage';
-import StagePage from "../pages/StagePage";
-import SessionPage from "../pages/SessionPage";
-import AfterpartyPage from "../pages/AfterpartyPage";
-import {AuthData} from "../store/auth/types";
-import LayoutAuth from "../layouts/LayoutAuth";
-import RegistrationPage from "../pages/RegistrationPage";
-import {AppState} from "../store";
-import {connect} from "react-redux";
-import {bindActionCreators, Dispatch} from "redux";
-import {registration} from "../store/auth/actions";
+import StagePage from '../pages/StagePage';
+import SessionPage from '../pages/SessionPage';
+import AfterpartyPage from '../pages/AfterpartyPage';
+import { AuthData } from '../store/auth/types';
+import LayoutAuth from '../layouts/LayoutAuth';
+import RegistrationPage from '../pages/RegistrationPage';
+import { AppState } from '../store';
+import { registration } from '../store/auth/actions';
 
 interface AuthStateProps {
   auth: AuthData;
@@ -23,7 +23,7 @@ interface AuthDispatchProps {
 
 type AppProps = AuthStateProps & AuthDispatchProps;
 
-const App: React.FC<AppProps> = ( { auth } ) => {
+const App: React.FC<AppProps> = ({ auth }) => {
   const renderApp = () => {
     return (
       <BrowserRouter>
@@ -38,7 +38,7 @@ const App: React.FC<AppProps> = ( { auth } ) => {
         </Layout>
       </BrowserRouter>
     );
-  }
+  };
 
   const renderAuthApp = () => {
     return (
@@ -48,13 +48,12 @@ const App: React.FC<AppProps> = ( { auth } ) => {
         </LayoutAuth>
       </BrowserRouter>
     );
-  }
+  };
 
   if (auth || true) {
     return renderApp();
-  } else {
-    return renderAuthApp()
   }
+  return renderAuthApp();
 };
 
 const mapStateToProps = (state: AppState): AuthStateProps => ({
