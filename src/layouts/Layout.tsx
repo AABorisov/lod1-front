@@ -4,12 +4,20 @@ import styles = require('./styles.scss');
 import {NavLink} from "react-router-dom";
 import classnames from 'classnames';
 import SidePanel from "../components/SidePanel/SidePanel";
+import {bindActionCreators, Dispatch} from "redux";
+import {changeVideo} from "../store/videoplayer/actions";
+import {connect} from "react-redux";
+import {VideoPlayerState} from "../store/videoplayer/types";
 
-interface LayoutProps {
+interface LayoutDispatchProps  {
+  changeVideoplayer: (data: VideoPlayerState) => void;
+}
+
+interface LayoutProps extends LayoutDispatchProps {
   children?: JSX.Element | Array<JSX.Element>;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children , changeVideoplayer}) => {
   const navLinks = [
     // {
     //   to: 'reception',
@@ -32,12 +40,26 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     //   name: 'Networking',
     // },
   ];
+  const onNetworkingClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+    changeVideoplayer({
+      video_id: 'networking',
+      video_provider: 'tokbox',
+    })
+  }
+  const onVideoroomClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    event.preventDefault();
+    changeVideoplayer({
+      video_id: 'common',
+      video_provider: 'tokbox',
+    })
+  }
   return (
     <div className={styles.app}>
       <header className={styles.header_header}>DEV Labs
         <div className={styles.header_buttons}>
-          <button className={classnames(styles.header_buttons_button, styles.header_buttons_networking)}>Networking</button>
-          <button className={classnames(styles.header_buttons_button, styles.header_buttons_videoroom)}>Video Room</button>
+          <button className={classnames(styles.header_buttons_button, styles.header_buttons_networking)} onClick={onNetworkingClick}>Networking</button>
+          <button className={classnames(styles.header_buttons_button, styles.header_buttons_videoroom)} onClick={onVideoroomClick}>Video Room</button>
         </div>
       </header>
       <nav className={styles['navigation-sidebar-component_navigation-sidebar-container']}>
@@ -66,4 +88,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default Layout;
+const mapDispatchToProps = (dispatch: Dispatch): LayoutDispatchProps => (
+  bindActionCreators({
+    changeVideoplayer: changeVideo
+  }, dispatch));
+
+export default connect(null, mapDispatchToProps)(Layout);
