@@ -1,0 +1,65 @@
+
+
+.registration {
+  position: relative;
+
+  height: 803px;
+
+  .bg1 {
+    position: absolute;
+    right:700px;
+  }
+  .bg2 {
+    position: absolute;
+    left: 700px;
+
+  }
+
+  .popup {
+
+  }
+
+  .header {
+    width: 701px;
+    height: 157px;
+    background: #4C4D9D;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #FFFFFF;
+  }
+
+  .main {
+
+  }
+
+  .description {
+
+  }
+
+  .buttons {
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+
+    .prev {
+
+    }
+
+    .next {
+
+    }
+
+    .inactive {
+
+    }
+
+  }
+}

@@ -1,0 +1,271 @@
+*, *::after, *::before {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+h3, p {
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+main > img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.block-items {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.btns {
+	margin-right: 10px;
+}
+
+#title_text {
+	height: 40px;
+	border-radius: 5%;
+	padding: .5em 1em;
+	margin-left: 10px;
+	line-height: 40px;
+	box-shadow: 0 .4em .4em rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	width: 200px;
+	background-color: #fff;
+	margin-top: -20px;
+	
+	z-index: -10;
+	padding-top: 10px;
+}
+
+
+.count-btn {
+	padding: .5em 1.5em;
+	border: 1px solid #3f90bc;
+	border-radius: 5px;
+	outline: none;
+}
+
+
+.arrow-btn > i {
+	line-height: 40px;
+	margin: 0 auto;
+}
+
+.count-btn > i {
+	color: #3f90bc;
+	margin-right: 4px;
+}
+
+.btns > button:last-of-type {
+	background-color: #3f90bc;
+	color: #fff;
+}
+
+
+.lecture {
+	position: relative;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 15px;
+}
+
+
+.lecture img {
+	width: 95%;
+	height: auto;
+}
+
+.lecture img:first-of-type {
+	margin: 100px auto;
+}
+
+.lecture img:last-of-type {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: calc(50% - 40px);
+	left: calc(50% - 40px);
+	transform: 
+		translateX(-50%),
+		translateY(-50%);
+	
+}
+
+
+.lecture > h3 {
+	font-weight: 500;
+	border: 1px solid red;
+	position: absolute;
+	left: 34%;
+	bottom: 18%;
+	font-size: 16px;
+}
+
+
+
+.very-visited-rooms  {
+	background: #fff;
+	border-radius: 15px;
+	padding: 5px 10px 5px 10px;
+	margin: 50px;
+}
+
+.very-visited-rooms h3 {
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+
+.room-block {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 20px;
+	justify-content: center;
+	
+}
+
+.item > img {
+	height: 70%;
+
+}
+
+.item {
+	height: 300px;
+  width: auto;
+}
+
+.control {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.item h3 {
+	margin-top: 5px;
+	width: 95%;
+}
+
+.control h3 {
+  width: 200px;
+}
+
+
+
+
+@media (max-width: 1160px) {
+	.room-block {
+		grid-template-columns: auto auto;
+	}
+
+	.item:nth-child(odd) {
+		margin-right: auto;
+	}
+
+	.item:nth-child(even) {
+		margin-left: auto;
+	}
+
+	.item h3 {
+		width: 100%;
+	}
+
+	.lecture > h3 {
+		bottom: 19.3%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.lecture > h3 {
+		bottom: 20.5%;
+	}	
+}
+
+@media (max-width: 960px) {
+	.room-block {
+		grid-template-columns: auto;
+
+		width: 100vw;
+	}
+
+	.very-visited-rooms {
+		width: 100vw;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.very-visited-rooms h3 {
+		margin-left: 6px;
+		margin-top: 3px;
+	}
+
+	.item > img {
+		width: 70vw;
+		height: auto;
+	}
+
+
+	.item {
+		display: inline-block;
+		height: 100%;
+	}
+
+}
+
+@media (max-width: 920px) {
+	.very-visited-rooms {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	#title_text {
+
+		font-size: 16px
+	}
+}
+
+@media (max-width: 830px) {
+	.lecture > h3 {
+		left: 28%;
+		bottom: 22.5%;
+	}
+}
+
+@media (max-width: 700px) {
+	.lecture > h3 {
+		left: 22%;
+		bottom: 25%;
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 530px) {
+	#title_text {
+		width: 60%;
+		margin: -20px auto;
+		margin-bottom: 15px;
+	}	
+	.block-items {
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	.lecture > h3 {
+		font-size: 8px;
+		bottom: 28%;
+	}
+}
+
+
+
+

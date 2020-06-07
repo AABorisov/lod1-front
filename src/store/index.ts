@@ -1,7 +1,7 @@
 import { AnyAction, applyMiddleware, createStore, Dispatch, Store } from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 import rootReducer from './rootReducer';
-import { fetchQuestions } from './questions/actions';
+import {setAuth} from "./auth/actions";
 
 export type AppState = ReturnType<typeof rootReducer>;
 
@@ -12,7 +12,11 @@ const configureStore = (initialState = {}): Store<AppState> => {
 
   /* Load async data */
   function fetchData(dispatch: Dispatch): void {
-    dispatch(fetchQuestions.apply(this));
+    if (!localStorage.getItem('tAccess')) {
+      setAuth(localStorage.getItem('tAccess'))
+    } else {
+      setAuth(null)
+    }
   }
   fetchData(store.dispatch);
   return store;

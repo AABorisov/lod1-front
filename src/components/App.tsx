@@ -5,21 +5,68 @@ import ReceptionPage from '../pages/ReceptionPage';
 import StagePage from "../pages/StagePage";
 import SessionPage from "../pages/SessionPage";
 import AfterpartyPage from "../pages/AfterpartyPage";
+import {AuthData} from "../store/auth/types";
+import LayoutAuth from "../layouts/LayoutAuth";
+import RegistrationPage from "../pages/RegistrationPage";
+import {AppState} from "../store";
+import {connect} from "react-redux";
+import {bindActionCreators, Dispatch} from "redux";
+import {registration} from "../store/auth/actions";
 
-const App: React.FC<{}> = () => {
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          <Redirect exact from="/" to="/afterparty" />
-          <Route path="/reception" component={ReceptionPage} />
-          <Route path="/stage" component={StagePage} />
-          <Route path="/session" component={SessionPage} />
-          <Route path="/afterparty" component={AfterpartyPage} />
-        </Switch>
-      </Layout>
-    </BrowserRouter>
-  );
+interface AuthStateProps {
+  auth: AuthData;
+}
+
+interface AuthDispatchProps {
+  registrationUser: () => void;
+}
+
+type AppProps = AuthStateProps & AuthDispatchProps;
+
+const App: React.FC<AppProps> = ( { auth } ) => {
+  const renderApp = () => {
+    return (
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Redirect exact from="/" to="/afterparty" />
+            <Route path="/reception" component={ReceptionPage} />
+            <Route path="/stage" component={StagePage} />
+            <Route path="/session" component={SessionPage} />
+            <Route path="/afterparty" component={AfterpartyPage} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
+    );
+  }
+
+  const renderAuthApp = () => {
+    return (
+      <BrowserRouter>
+        <LayoutAuth>
+          <RegistrationPage />
+        </LayoutAuth>
+      </BrowserRouter>
+    );
+  }
+
+  if (auth || true) {
+    return renderApp();
+  } else {
+    return renderAuthApp()
+  }
 };
 
-export default App;
+const mapStateToProps = (state: AppState): AuthStateProps => ({
+  auth: state.auth.auth,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch): AuthDispatchProps =>
+  bindActionCreators(
+    {
+      registrationUser: registration,
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
