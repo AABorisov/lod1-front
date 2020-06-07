@@ -42,6 +42,7 @@ module.exports = (env, options) => {
                   localIdentName: '[local]',
                   context: path.resolve(__dirname, 'src'),
                   hashPrefix: 'my-custom-hash',
+
                 } : true,
                 // importLoaders: 1,
               },
@@ -59,7 +60,7 @@ module.exports = (env, options) => {
           ],
         },
         {
-          test: /\.(png|svg|jpg|gif)$/,
+          test: /\.(png|svg|jpe?g|gif)$/,
           use: [
             {
               loader: 'file-loader',

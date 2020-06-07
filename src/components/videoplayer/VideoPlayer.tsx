@@ -33,14 +33,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoplayer , opentokConfig})
           },
         };
 
-        return <YouTube videoId="ZR_v2WiV4r4" opts={opts}
+        return <YouTube videoId={videoplayer.video_id} opts={opts}
                  className={styles.youtube}
-                 containerClassName={styles.youtubeContainer}/>
+                 containerClassName={styles.youtubeContainer}
+                        key={videoplayer.video_id}
+        />
       case 'tokbox':
         if (opentokConfig.hasOwnProperty(videoplayer.video_id)) {
           const otConfig = opentokConfig[videoplayer.video_id];
           return (
-            <OTSession apiKey={otConfig.apiKey} sessionId={otConfig.sessionId} token={otConfig.token}>
+            <OTSession apiKey={otConfig.apiKey} sessionId={otConfig.sessionId} token={otConfig.token} className={styles[`OT_${videoplayer.video_id}`]} key={otConfig.apiKey}>
               <OTPublisher />
               <OTStreams>
                 <OTSubscriber />

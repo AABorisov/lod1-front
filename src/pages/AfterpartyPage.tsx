@@ -1,10 +1,25 @@
 import * as React from 'react';
 import styles = require('./styles.scss');
 import VideoPlayer from "../components/videoplayer/VideoPlayer";
+import {connect} from "react-redux";
+import {bindActionCreators, Dispatch} from "redux";
+import {changeVideo} from "../store/videoplayer/actions";
+import {VideoPlayerState} from "../store/videoplayer/types";
 
 require('../styles/style.css');
 
-const AfterpartyPage: React.FC<{}> = () => {
+interface AfterpartyPageDispatchProps {
+  changeVideoplayer: (data: VideoPlayerState) => void;
+}
+
+const AfterpartyPage: React.FC<AfterpartyPageDispatchProps> = ({changeVideoplayer}) => {
+  const onVideoroomClick = ( id: string ) => (event: React.MouseEvent<HTMLDivElement>): void => {
+    console.log('onVideoroomClick');
+    changeVideoplayer({
+      video_id: id,
+      video_provider: 'youtube',
+    })
+  }
 
   return (
     <div className={styles.afterparty}>
@@ -37,7 +52,7 @@ const AfterpartyPage: React.FC<{}> = () => {
     <section className="very-visited-rooms">
       <h3>Самые посещаемые комнаты</h3>
       <div className="room-block">
-        <div className="item">
+        <div className="item" onClick={onVideoroomClick('yJt4TGCvHxs')}>
           <img src="public/assets/afterparty/image 11.png" />
           <div className="control">
             <h3>Пляж</h3>
@@ -93,7 +108,7 @@ const AfterpartyPage: React.FC<{}> = () => {
           </div>
         </div>
         <div className="item">
-          <img src="public/assets/afterparty/image 18.png"/>
+          <img src="public/assets/afterparty/image 18.png" onClick={onVideoroomClick('pf3R3pll1EI')}/>
           <div className="control">
             <h3>Космос</h3>
 
@@ -153,4 +168,10 @@ const AfterpartyPage: React.FC<{}> = () => {
   </div>)
 };
 
-export default AfterpartyPage;
+const mapDispatchToProps = (dispatch: Dispatch): AfterpartyPageDispatchProps => (
+  bindActionCreators({
+    changeVideoplayer: changeVideo
+  }, dispatch));
+
+
+export default connect(null, mapDispatchToProps)(AfterpartyPage);

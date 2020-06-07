@@ -12,3 +12,38 @@
   width: 100%;
   height: calc(100vh - var(--header-height) - 50px);
 }
+
+
+.OT_common {
+    height: 100%;
+    //background-image: url(public/assets/videoplayer/back.jpeg);
+    background-size: cover;
+
+  #videos {
+    position: relative;
+    width: 380px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 100px;
+    top: 10px;
+    background-color: blueviolet;
+    background-size: auto;
+  }
+
+  #subscriber {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    top: 260px;
+    left: 10px;
+  }
+
+  #publisher {
+    position: absolute;
+    width: 360px;
+    height: 240px;
+    top: 10px;
+    left: 10px;
+    border: 1px solid black;
+  }
+}
