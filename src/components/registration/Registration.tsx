@@ -1,9 +1,9 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Form from "./Form";
-import Avatar from "./Avatar";
-import Ticket from "./Ticket";
-import SelectTags from "./SelectTags";
+import Form from './Form';
+import Avatar from './Avatar';
+import Ticket from './Ticket';
+import SelectTags from './SelectTags';
 
 import styles = require('./styles.scss');
 
@@ -192,7 +192,8 @@ const Registration: React.FC<{}> = () => {
           </button>
         </footer>
       </div>
-         </div>;
+    </div>
+  );
 };
 
 export default Registration;

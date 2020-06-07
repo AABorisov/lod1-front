@@ -32,7 +32,7 @@ const Body: React.FC<{}> = () => {
   }, []);
 
   const userListNode = userList.map(user => (
-    <div className={styles['people-list_attendee-list-item']}>
+    <div key={user.id} className={styles['people-list_attendee-list-item']}>
       <div className={styles['people-list-item_avatar']}>
         <img
           src="https://s3.amazonaws.com/quiin/users/pictures/000/053/924/medium/filename.jpg?1585434185"

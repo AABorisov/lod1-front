@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import Tab from "./Tab";
+import Tab from './Tab';
 
 import styles = require('./styles.scss');
 
@@ -21,7 +21,8 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
           <Tab key={tab.name} name={tab.name} active={tab.active} />
         ))}
       </div>
-         </div>;
+    </div>
+  );
 };
 
 export default Tabs;

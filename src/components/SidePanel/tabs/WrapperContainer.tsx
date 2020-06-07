@@ -11,13 +11,12 @@ interface WrapperContainerProps {
 
 const WrapperContainer: React.FC<WrapperContainerProps> = ({ header, body, footer }) => {
   return (
-    (
-<div className={styles['side-panel-wrapper_container']}>
-    { header && <div>{ header }</div> }
-    { body && <div className={styles['side-panel-wrapper_body']}>{ body }</div> }
-    { footer && <div className={styles['side-panel-wrapper_footer']}>{ footer }</div> }
-  </div>
-);
+    <div className={styles['side-panel-wrapper_container']}>
+      {header && <div>{header}</div>}
+      {body && <div className={styles['side-panel-wrapper_body']}>{body}</div>}
+      {footer && <div className={styles['side-panel-wrapper_footer']}>{footer}</div>}
+    </div>
+  );
 };
 
 export default WrapperContainer;

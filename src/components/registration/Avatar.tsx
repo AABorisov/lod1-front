@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import {StepProps} from "./Registration";
+import { StepProps } from './Registration';
 
 import styles = require('./styles.scss');
 
@@ -26,7 +26,8 @@ const Avatar: React.FC<StepProps> = ({ user, fields, onChange }) => {
           key={avatarId}
         />
       ))}
-         </div>;
+    </div>
+  );
 };
 
 export default Avatar;

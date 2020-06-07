@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import {ITab} from "./Tabs";
+import { ITab } from './Tabs';
 
 import styles = require('./styles.scss');
 
@@ -16,11 +16,9 @@ const Tab: React.FC<TabProps> = ({ name, active }) => {
         [styles['side-panel_active']]: active,
       })}
     >
-      <span className={styles['side-panel_panel-tab-title']}> 
-{' '}
-{name}
-</span>
-         </div>;
+      <span className={styles['side-panel_panel-tab-title']}> {name}</span>
+    </div>
+  );
 };
 
 export default Tab;

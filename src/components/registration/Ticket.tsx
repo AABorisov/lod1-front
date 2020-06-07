@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import {StepProps} from "./Registration";
+import { StepProps } from './Registration';
 
 import styles = require('./styles.scss');
 
@@ -25,7 +25,8 @@ const Ticket: React.FC<StepProps> = ({ user, fields, onChange }) => {
           </li>
         ))}
       </ul>
-         </div>;
+    </div>
+  );
 };
 
 export default Ticket;

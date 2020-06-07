@@ -2,6 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
 import YouTube, { Options } from 'react-youtube';
+//@ts-ignore
 import { OTSession, OTPublisher, OTStreams, OTSubscriber } from 'opentok-react';
 import { AppState } from '../../store';
 import { VideoPlayerState } from '../../store/videoplayer/types';
