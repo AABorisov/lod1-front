@@ -1,7 +1,6 @@
 import { Method } from 'axios';
 
-const API = {
-};
+const API = {};
 
 export default API;
 
@@ -15,7 +14,7 @@ export type BackendEndpointNames =
   | 'createToken'
   | 'updateToken'
   | 'refreshToken'
-  | 'verifyToken'
+  | 'verifyToken';
 
 export type BackendEndpoints = {
   [key in BackendEndpointNames]: EndPoint;

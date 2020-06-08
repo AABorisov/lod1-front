@@ -1,13 +1,11 @@
 import * as React from 'react';
+import classnames from 'classnames';
+import { StepProps } from './Registration';
 
 import styles = require('./styles.scss');
-import classnames from 'classnames';
-import {StepProps} from "./Registration";
 
-const SelectTags: React.FC<StepProps> = ({user, fields, onChange}) => {
-  return <div className={styles['select']}>
-
-  </div>;
-}
+const SelectTags: React.FC<StepProps> = ({ user, fields, onChange }) => {
+  return <div className={styles.select} />;
+};
 
 export default SelectTags;

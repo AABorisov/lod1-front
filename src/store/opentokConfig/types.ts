@@ -1,14 +1,14 @@
 import { ThunkFetchState } from '../types';
 
 export interface OpenTokConfig {
-  apiKey : string;
-  sessionId : string;
-  token : string;
+  apiKey: string;
+  sessionId: string;
+  token: string;
 }
 
 export type OpentokResponseData = OpenTokConfig;
 export interface OpentokData {
-  [key: string] : OpenTokConfig;
+  [key: string]: OpenTokConfig;
 }
 
 export interface OpentokState extends ThunkFetchState {

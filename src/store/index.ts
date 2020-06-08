@@ -1,8 +1,8 @@
 import { AnyAction, applyMiddleware, createStore, Dispatch, Store } from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 import rootReducer from './rootReducer';
-import {setAuth} from "./auth/actions";
-import {fetchOpentok} from "./opentokConfig/actions";
+import { setAuth } from './auth/actions';
+import { fetchOpentok } from './opentokConfig/actions';
 
 export type AppState = ReturnType<typeof rootReducer>;
 
@@ -14,9 +14,9 @@ const configureStore = (initialState = {}): Store<AppState> => {
   /* Load async data */
   async function fetchData(dispatch: Dispatch): Promise<void> {
     if (!localStorage.getItem('tAccess')) {
-      setAuth(localStorage.getItem('tAccess'))
+      setAuth(localStorage.getItem('tAccess'));
     } else {
-      setAuth(null)
+      setAuth(null);
     }
     dispatch(fetchOpentok.apply(this));
   }

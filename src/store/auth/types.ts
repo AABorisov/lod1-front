@@ -1,5 +1,4 @@
-import {ThunkFetchState} from "../types";
-
+import { ThunkFetchState } from '../types';
 
 export interface AuthState extends ThunkFetchState {
   auth: AuthData;
